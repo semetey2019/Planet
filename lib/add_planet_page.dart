@@ -13,14 +13,14 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
   final _orbitRadiusController = TextEditingController();
   final _colorController = TextEditingController();
   final _distanceController = TextEditingController();
-  final _planetNameController = TextEditingController();
+  final _planetRemoteController = TextEditingController();
 
   @override
   void dispose() {
     _orbitRadiusController.dispose();
     _colorController.dispose();
     _distanceController.dispose();
-    _planetNameController.dispose();
+    _planetRemoteController.dispose();
     super.dispose();
   }
 
@@ -74,7 +74,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
                 },
               ),
               TextFormField(
-                controller: _planetNameController,
+                controller: _planetRemoteController,
                 decoration: const InputDecoration(
                   labelText: 'Rotation Speed',
                 ),
@@ -92,7 +92,7 @@ class _AddPlanetScreenState extends State<AddPlanetScreen> {
                     Planet planet = Planet(
                       distance: double.parse(_orbitRadiusController.text),
                       color: Color(int.parse(_colorController.text)),
-                      planetName: _planetNameController.text,
+                      planetRemotes: int.parse(_planetRemoteController.text),
                       orbitRadius: double.parse(_distanceController.text),
                     );
                     Navigator.pop(context, planet);

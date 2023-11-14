@@ -25,49 +25,49 @@ class _KunSistemasyState extends State<KunSistemasy>
 
     _planets = [
       // Planet(
-      //   planetName: 'Mercury',
+      //   planetRemotes: 'Mercury',
       //   distance: 5.0,
       //   orbitRadius: 50.0,
       //   color: Colors.grey,
       // ),
       // Planet(
-      //   planetName: 'Venus',
+      //   planetRemotes: 'Venus',
       //   distance: 10.0,
       //   orbitRadius: 70.0,
       //   color: Colors.orangeAccent,
       // ),
       // Planet(
-      //   planetName: 'Earth',
+      //   planetRemotes: 'Earth',
       //   distance: 15.0,
       //   orbitRadius: 80.0,
       //   color: Colors.blue,
       // ),
       // Planet(
-      //   planetName: 'Mars',
+      //   planetRemotes: 'Mars',
       //   distance: 12.0,
       //   orbitRadius: 100.0,
       //   color: Colors.red,
       // ),
-      Planet(
-        planetName: 'Juppyter',
-        distance: 25.0,
-        orbitRadius: 120.0,
-        color: Colors.brown,
-      ),
       // Planet(
-      //   planetName: 'Saturn',
+      //   planetRemotes: 'Juppyter',
+      //   distance: 25.0,
+      //   orbitRadius: 120.0,
+      //   color: Colors.brown,
+      // ),
+      // Planet(
+      //   planetRemotes: 'Saturn',
       //   distance: 22.0,
       //   orbitRadius: 140.0,
       //   color: Colors.yellow,
       // ),
       // Planet(
-      //   planetName: 'Uranus',
+      //   planetRemotes: 'Uranus',
       //   distance: 15.0,
       //   orbitRadius: 150.0,
       //   color: Colors.lightBlue,
       // ),
       Planet(
-        planetName: 'Neptune',
+        planetRemotes: 'Neptune',
         distance: 15.0,
         orbitRadius: 160.0,
         color: Colors.blue.shade900,
@@ -84,9 +84,9 @@ class _KunSistemasyState extends State<KunSistemasy>
       // _createController(
       //   365,
       // ),
-      _createController(
-        687,
-      ),
+      // _createController(
+      //   687,
+      // ),
       // _createController(
       //   4333,
       // ),
@@ -214,7 +214,7 @@ class SolarSystemFullPainter extends CustomPainter {
 
       if (i >= 4) {
         final highLightPaint = Paint()
-          ..color = Colors.green.withOpacity(0.8)
+          ..color = Colors.orange.withOpacity(0.8)
           ..style = PaintingStyle.stroke
           ..strokeWidth = 4.0;
 
