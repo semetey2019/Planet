@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kun_systemasy/color_option.dart';
 
 class AddPlanetForm extends StatefulWidget {
   const AddPlanetForm({Key? key, required this.onSubmit}) : super(key: key);
@@ -37,6 +38,7 @@ class _AddPlanetFormState extends State<AddPlanetForm> {
           child: Column(
             children: [
               TextFormField(
+                keyboardType: TextInputType.name,
                 controller: _planetNameController,
                 decoration: const InputDecoration(labelText: 'Planet Name'),
                 validator: (value) {
@@ -70,7 +72,9 @@ class _AddPlanetFormState extends State<AddPlanetForm> {
               ),
               TextFormField(
                 controller: _orbitDurationController,
-                decoration: const InputDecoration(labelText: 'Orbit Duration'),
+                decoration: const InputDecoration(
+                    labelText:
+                        'Orbit Duration'), //надо написать цифр больше 1000
                 keyboardType: TextInputType.number,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -116,52 +120,6 @@ class _AddPlanetFormState extends State<AddPlanetForm> {
           child: const Text('Add Planet'),
         ),
       ],
-    );
-  }
-}
-
-class ColorPicker extends StatelessWidget {
-  final void Function(Color color) onSelectColor;
-
-  const ColorPicker({Key? key, required this.onSelectColor}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Wrap(
-      children: [
-        _ColorOption(color: Colors.grey, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.orangeAccent, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.blue, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.red, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.brown, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.yellow, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.lightBlue, onSelectColor: onSelectColor),
-        _ColorOption(color: Colors.blue.shade900, onSelectColor: onSelectColor),
-      ],
-    );
-  }
-}
-
-class _ColorOption extends StatelessWidget {
-  final Color color;
-  final void Function(Color color) onSelectColor;
-
-  const _ColorOption(
-      {Key? key, required this.color, required this.onSelectColor})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        onSelectColor(color);
-      },
-      child: Container(
-        width: 30,
-        height: 30,
-        color: color,
-        margin: const EdgeInsets.all(5),
-      ),
     );
   }
 }
